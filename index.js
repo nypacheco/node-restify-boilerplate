@@ -7,10 +7,8 @@ var server = restify.createServer({
 });
 
 server.use(restify.acceptParser(server.acceptable));
-server.use(restify.authorizationParser());
-server.use(restify.dateParser());
 server.use(restify.queryParser());
-server.use(restify.urlEncodedBodyParser());
+server.use(restify.bodyParser());
 
 server.get( '/hello/:name', Routes.example.hello);
 
